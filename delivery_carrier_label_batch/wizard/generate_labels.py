@@ -265,7 +265,8 @@ class DeliveryCarrierLabelGenerate(models.TransientModel):
                         self.env['ir.attachment'].create(data)
                 else:
                     labels_bin = [
-                        codecs.decode(label['data'], "base64") for label in labels if label
+                        codecs.decode(label['data'], "base64")
+                        for label in labels if label
                     ]
                     filename = batch.name + '.' + f_type
 
